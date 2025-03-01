@@ -86,7 +86,14 @@ const ModulePage = () => {
       </div>
 
       
-      <div className="fixed bottom-0 left-0 right-0 z-10 p-4 shadow-lg">       </div>
+      <div className="fixed bottom-0 left-0 right-0 z-10 p-4 shadow-lg">
+        <button 
+        onClick={() => navigate(`/module/video/1`)}
+          className="w-full px-6 py-2 text-lg font-semibold text-purple-600 transition-colors bg-white rounded-llg hover:bg-purple-700"
+        >
+          Continue
+        </button>
+      </div>
     </div>
   );
 };
