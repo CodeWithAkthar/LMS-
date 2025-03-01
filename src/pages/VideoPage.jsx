@@ -42,7 +42,7 @@ const VideoPage = () => {
   }
 
 
-  const video = videos[moduleId];
+  const video = videos[moduleId-1];
 
   return (
     <div className="min-h-screen bg-white">

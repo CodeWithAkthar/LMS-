@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import SubjectPage from './pages/SubjectPage';
 import ModulePage from './pages/ModulePage';
 import VideoPage from './pages/VideoPage';
+import { Navigate } from "react-router-dom";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/subject/:subjectId" element={<SubjectPage />} />
         <Route path="/module/:moduleId" element={<ModulePage />} />
         <Route path="/module/video/:moduleId" element={<VideoPage />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
