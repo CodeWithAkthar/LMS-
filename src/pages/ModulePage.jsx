@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate,useSearchParams } from 'react-router-dom';
 import { getVideos } from '../services/api';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { TbMessageChatbotFilled } from 'react-icons/tb';
@@ -8,6 +8,8 @@ const ModulePage = () => {
   const { moduleId } = useParams();
   const [videos, setVideos] = useState([]);
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const modulename = searchParams.get("modulename");
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -41,7 +43,7 @@ const ModulePage = () => {
       {/* Module ID */}
       <div className="pt-16">
         <h3 className="font-thin">Module {moduleId}</h3>
-        <h1 className="font-extrabold">Video Title</h1>
+        <h1 className="font-extrabold">{modulename}</h1>
       </div>
 
       {/* Video List Section */}
@@ -89,7 +91,7 @@ const ModulePage = () => {
       <div className="fixed bottom-0 left-0 right-0 z-10 p-4 shadow-lg">
         <button 
         onClick={() => navigate(`/module/video/1`)}
-          className="w-full px-6 py-2 text-lg font-semibold text-purple-600 transition-colors bg-white rounded-llg hover:bg-purple-700"
+          className="w-full px-6 py-2 text-lg font-semibold text-white transition-colors bg-purple-600 rounded-llg hover:bg-purple-700"
         >
           Continue
         </button>

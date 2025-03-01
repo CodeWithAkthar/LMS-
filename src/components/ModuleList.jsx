@@ -6,7 +6,7 @@ const ModuleList = ({ modules }) => {
       {modules.map((module, index) => (
         <Link
           key={module.id}
-          to={`/module/${module.id}`}
+          to={`/module/${module.id}??modulename=${modules.title}`}
           className="relative block"
         >
           {/* Module Title */}
